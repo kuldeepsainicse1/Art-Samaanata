@@ -1,0 +1,114 @@
+.App {
+    font-family: sans-serif;
+    text-align: center;
+  }
+
+  /* * {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+  } */
+  @font-face {
+    font-family: 'Bungee Inline', cursive;
+    src: url('https://fonts.googleapis.com/css?family=Bungee+Inline')
+  }
+  
+  .cert {
+    /* width: 29cm;
+    min-height: 20cm; */
+    padding: 2cm;
+    margin:auto;
+    /* margin-top: 5px; */
+    /* border:#111 solid;  */
+    /* border-radius: 5px; */
+    /* background-image: gray;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); */ 
+  }
+  .Certificate {
+    width: 29cm;
+    min-height: 20cm;
+    /* padding: 2cm; */
+    margin:auto;
+    margin-top: -55px;
+    margin-left: -60px;
+    border:2px #000 solid; 
+    border-radius: 10px;
+    /* background-image: gray;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); */ 
+  }
+.cert-head{
+    height: 350px;
+    /* width: 100%; */
+    /* background-color: gray; */
+}  
+.cert-head-text{
+  margin-top: 140px;
+  margin-left: 50px;
+  font-family:"Helvetica" ;
+  font-size: 60px;
+  font-style: bold;
+  color: rgb(50, 50, 199);
+}
+.cert-head-text1{
+  margin-top: -30px;
+  margin-left:40px;
+  font-style: initial;
+  font-family:"Lucida Grande";
+  font-size: 40px;
+  color: rgb(56, 56, 197);
+}
+.cert-body{
+  font-family:"sans-serif";
+}  
+
+.cert-body-text1{
+  margin-top: -30px;
+  margin-left:15px;
+  font-style: initial;
+  font-family:"Lucida Grande";
+  font-size: 22px;
+  color: rgb(18, 18, 20);
+}
+.cert-body-text2{
+  margin-top: 0px;
+  margin-left:15px;
+  font-style: initial;
+  font-family:cursive;
+  font-size: 50px;
+  color: rgb(0, 0, 61);
+}
+.cert-body-text3{
+  margin-top: 0px;
+  margin-left:15px;
+  font-style: initial;
+  font-family:Courier;
+  font-size: 18px;
+  color: rgb(50, 50, 50);
+}
+.cert-footer{
+  /* height: 200px; */
+  /* width: 100%; */
+  margin-top: 100px;
+  /* background-color: rgb(192, 53, 53); */
+}  
+
+.image-cropper {
+   margin: 33px 0 0 -5px;
+  max-width: 150px;
+  height: auto;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.image-cropper img{
+  /* display: block; */
+  margin: 0 auto;
+  height: auto;
+  width: 150%; 
+  margin: 0 0 0 -20%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;  
+}

@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "dev": "art-samaanata",
+    "default": "mystic-react"
+  }
+}
