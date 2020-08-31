@@ -28,7 +28,8 @@ const Features = () => {
                                 <i><img src="assets/images/featured-item-01.png" alt="" /></i>
                             </div>
                             <h5 className="features-title">Best Process</h5>
-                            <p>Target participants shall register for the competition of their choice and make submissions as per guidelines jo join the race of competition</p>
+                            <p>Target participants shall register for the competition of their choice and make submissions as per guidelines jo join the race of competition<br/><a href="\rules">Check out Rules</a></p>
+                            
                         </div>
                     </div>
                   
@@ -38,7 +39,7 @@ const Features = () => {
                                 <i><img src="assets/images/featured-item-01.png" alt="" /></i>
                             </div>
                             <h5 className="features-title">Ultimate Evaluation & Announcements</h5>
-                            <p>Evaluation of all submissions processed and winners shall be announced and presented the incentives.</p>
+                            <p>Evaluation of all submissions processed and winners shall be announced and presented the incentives.<br/><a href="\prizes">Check out Prizes</a></p>
                         </div>
                     </div>
                     </div>

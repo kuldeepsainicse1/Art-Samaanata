@@ -32,6 +32,9 @@ import Index from "views/main/IndexPage1.js";
 import NucleoIcons from "views/NucleoIcons.js";
 import LoginPage from "views/main/LoginPage.js";
 import SignUpPage from "views/main/SignUpPage.js";
+import RulesPage from "views/main/RulesPage.js";
+import PrizesPage from "views/main/PrizesPage.js";
+
 import ProfilePage from "views/main/ProfilePage.js";
 import Admin from "views/admin/admin.js";
 import Cert from "views/Certificate/Cert";
@@ -47,23 +50,23 @@ import SurveyComponent from "views/Survey/Survey.js";
       
 
         <Route exact path="/index" render={props => <Index {...props} />} />
-        <Route
+        {/* <Route
           path="/nucleo-icons"
           render={props => <NucleoIcons {...props} />}
-        />
-        <Route
+        /> */}
+        {/* <Route
           path="/admin"
           render={props => <Admin {...props} />}
-        />
-        <Route
+        /> */}
+        {/* <Route
           path="/cert"
           render={props => <Cert {...props} />}
-        />
+        /> */}
 
-        <Route
+        {/* <Route
           path="/survey"
           render={props => <SurveyComponent {...props} />}
-        />
+        /> */}
 
         {/* { <ProtectedRoute
         exact
@@ -95,6 +98,12 @@ import SurveyComponent from "views/Survey/Survey.js";
 {/* <Route path="/db"
                render={props => <DB {...props} />} 
         /> */}
+        <Route path="/rules"
+               render={props => <RulesPage {...props} />} 
+        />
+        <Route path="/prizes"
+               render={props => <PrizesPage {...props} />} 
+        />
         
         <Route path="/register"
                render={props => <SignUpPage {...props} />} 

@@ -25,14 +25,14 @@ const Parallex = () => {
                                 </a>
                             </div>
                             <div className="col-lg-2 col-md-3 col-sm-6 col-6">
-                                <a href="#" className="mini-box">
+                                <a href="/register" className="mini-box">
                                     <i><img src="assets/images/work-process-item-01.png" alt="" /></i>
                                     <strong>Register</strong>
                                     {/* <span>Godard pabst prism fam cliche.</span> */}
                                 </a>
                             </div>
                             <div className="col-lg-2 col-md-3 col-sm-6 col-6">
-                                <a href="#" className="mini-box">
+                                <a href="/profile" className="mini-box">
                                     <i><img src="assets/images/work-process-item-01.png" alt="" /></i>
                                     <strong>Submit Art</strong>
                                     {/* <span>Godard pabst prism fam cliche.</span> */}
@@ -46,14 +46,14 @@ const Parallex = () => {
                                 </a>
                             </div>
                             <div className="col-lg-2 col-md-3 col-sm-6 col-6">
-                                <a href="#" className="mini-box">
+                                <a href="/rules" className="mini-box">
                                     <i><img src="assets/images/work-process-item-01.png" alt="" /></i>
                                     <strong>Evaluation</strong>
                                     {/* <span>Godard pabst prism fam cliche.</span> */}
                                 </a>
                             </div>
                             <div className="col-lg-2 col-md-3 col-sm-6 col-6">
-                                <a href="#" className="mini-box">
+                                <a href="/prizes" className="mini-box">
                                     <i><img src="assets/images/work-process-item-01.png" alt="" /></i>
                                     <strong>Prizes</strong>
                                     {/* <span>Godard pabst prism fam cliche.</span> */}
