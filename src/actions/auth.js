@@ -1,3 +1,4 @@
+import firebase from "firebase/app";
 import { myFirebase } from "../firebase/firebase";
 
 export const LOGIN_REQUEST = "LOGIN_REQUEST";
@@ -101,6 +102,9 @@ export const loginUser = (email, password) => dispatch => {
   console.log("loginUser");
   myFirebase
     .auth()
+    .setPersistence(firebase.auth.Auth.Persistence.SESSION);
+  myFirebase
+    .auth()
     .signInWithEmailAndPassword(email, password)
     .then(user => {
       dispatch(receiveLogin(user));
@@ -118,8 +122,9 @@ export const UpdateUser = (id,name, insta,email,notify)=>{
 
   if (name && insta && email ) {
   const time = new Date().getTime.toString();
+  const season="Season2";
   var dbRef = myFirebase.database().ref("/UserInfo/"+id);
-  dbRef.set({ name,insta,email,notify,time
+  dbRef.set({ name,insta,email,notify,time,season
     // Name: {name}, 
     // InstaID:{insta},
     // Email:{email},
@@ -140,6 +145,7 @@ export const UpdateUser = (id,name, insta,email,notify)=>{
 export const signupUser = (name, insta,email, password,notify) => dispatch => {
   dispatch(requestsignup());
   let id="";
+  myFirebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION);
   myFirebase.auth().createUserWithEmailAndPassword(email, password)
     .then(user => {
       id=myFirebase.auth().currentUser.uid
@@ -150,6 +156,8 @@ export const signupUser = (name, insta,email, password,notify) => dispatch => {
     .catch(error => {
       //Do something with the error if you want!
       console.log("error"+error);
+      
+      alert(error);
       dispatch(SignupError(error));
     });
     

@@ -72,7 +72,7 @@ class  SignUpPage extends Component {
     if(this.state.errormsg.length>0)
       alert(this.state.errormsg)
     else
-      dispatch(signupUser(name,insta,email, password,notify));
+      dispatch(signupUser(name,insta,email, password,notify,"Season2"));
     this.state.errormsg=""
   };
   
@@ -143,7 +143,7 @@ class  SignUpPage extends Component {
                   </div> */}
                 </CardHeader>
                 <CardBody>
-                
+                  
 
                   <InputGroup
                     className={
