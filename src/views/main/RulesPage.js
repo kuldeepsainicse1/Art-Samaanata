@@ -59,9 +59,9 @@ function RulesPage() {
             
             <ul className="list">
               <li><h3>Important Points To remember Before Registration</h3></li>
-              <li className="active"><b>Registrations Starts on 1st September 2020 by 00:01 AM</b></li>
-              <li className="active"><b>Registrations Ends on 15 September 2020 by 23:59 PM</b></li>
-              <li className="active"><b>Result Declaration Date : 18 September 2020</b> on Facebook, Instagram and this site.</li>
+              <li className="active"><b>Registrations Starts on 3rd September 2020 by 00:01 AM</b></li>
+              <li className="active"><b>Registrations Ends on 20 September 2020 by 23:59 PM</b></li>
+              <li className="active"><b>Result Declaration Date : 23 September 2020</b> on Facebook, Instagram and this site.</li>
               <li className="active">Its a no theme or no topic contest.  You can upload any art work form in any medium.</li>
               <li className="active">You can participate with minimum 1 art and maximum 3 art, fees mentioned below.</li>
               <li className="active"><h5>There are 2 Registration Categories</h5></li>

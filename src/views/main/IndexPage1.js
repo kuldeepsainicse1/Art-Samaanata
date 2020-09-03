@@ -83,10 +83,10 @@ state={rcount:"0",ccount:"0",wcount:"0",acount:"0"};
 
   componentDidMount() {
     var dbRef = firebaset.database().ref("/UserInfo/");
-    console.log("["+dbRef);
+    // console.log("["+dbRef);
     dbRef.on("value", snapshot => {
     const rcount = snapshot.numChildren();
-    console.log("The read count: " + rcount);
+    // console.log("The read count: " + rcount);
     this.setState({rcount});
   }, function (errorObject) {
     console.log("The read failed: " + errorObject.code);
@@ -113,7 +113,7 @@ state={rcount:"0",ccount:"0",wcount:"0",acount:"0"};
 //   console.log(data); // array of cities objects
 // });
 
-console.log('----------------');
+// console.log('----------------');
 
 
 // const data = {
@@ -133,20 +133,20 @@ const collection = fsRef.collection('Counters');
 collection.get().then(snapshot => {
 
 snapshot.forEach(doc => {
-  console.log(doc.id, '=>', doc.data());
+  // console.log(doc.id, '=>', doc.data());
   if(doc.id=='ArtSubmisions'){
       const acount = doc.data().count;
-      console.log("The read acount: " + acount);
+      // console.log("The read acount: " + acount);
       this.setState({acount});
     }
   else if(doc.id=='Countries'){
     const ccount = doc.data().count;
-    console.log("The read ccount: " + ccount);
+    // console.log("The read ccount: " + ccount);
     this.setState({ccount});
   }
   else if(doc.id=='Winners'){
     const wcount = doc.data().count;
-    console.log("The read wcount: " + wcount);
+    // console.log("The read wcount: " + wcount);
     this.setState({wcount});
   }
   // else if(doc.id=='Registrations'){

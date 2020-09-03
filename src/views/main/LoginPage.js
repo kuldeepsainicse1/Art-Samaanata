@@ -153,6 +153,7 @@ render() {
                   {loginError && (
               <Typography component="p" >
                 Incorrect email or password.
+                Contact admin to send you reset password link.
               </Typography>
             )}
                   <CardFooter className="text-center">

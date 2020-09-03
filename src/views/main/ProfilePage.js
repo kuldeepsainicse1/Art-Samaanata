@@ -44,7 +44,7 @@ import Footer from "components/Footer";
 
 
 class ProfilePage extends Component {
-    state = { name: "", uid: "" };
+    state = { name: "", uid: "",isDetails:"" };
 
 
     handleLogout = () => {
@@ -55,14 +55,17 @@ class ProfilePage extends Component {
     componentDidMount() {
 
         var user = firebaset.auth().currentUser;
-        console.log("Uid" + user.uid);
+        // console.log("Uid" + user.uid);
         var uid = user.uid
         this.setState({ uid });
         var dbRef = firebaset.database().ref("/UserInfo/" + user.uid + "/");
         // console.log("["+dbRef);
         dbRef.on("value", snapshot => {
             const name = snapshot.val().name;
+            const isDetails = snapshot.val().isDetails;
             this.setState({ name });
+            this.setState({ isDetails });
+            console.log(":"+this.state.isDetails);
         }, function (errorObject) {
             console.log("The read failed: " + errorObject.code);
         });
@@ -408,7 +411,7 @@ class ProfilePage extends Component {
             ]
         };
 
-        var surveyRender = !this.state.isCompleted ? (
+        var surveyRender =  !this.state.isDetails?(
             <Survey.Survey
                 json={json}
                 showCompletedPage={true}
@@ -418,10 +421,21 @@ class ProfilePage extends Component {
                     console.log("Result JSON:\n" + JSON.stringify(result.data, null, 3));
                     const fsRef = firebaset.firestore();
                     const res = fsRef.collection('UserDetails_ArtSeason2').doc(isUser.uid).set(result.data);
+                    alert("Thanks for successful submission\nPlease share details in Insta Page");
+                    var dbRef = firebaset.database().ref("/UserInfo/"+isUser.uid);
+                    dbRef.update({ isDetails: true})
+                    .then(function() {
+                        console.log('Synchronization succeeded at');
+                    })
+                    .catch(function(error) {
+                        console.log('Synchronization failed at');
+                    });
                 }}
 
             />
-        ) : null;
+            
+        )
+        :null ;
 
 
         // const [isMain] = this.state.props;
@@ -438,8 +452,13 @@ class ProfilePage extends Component {
         // });
 
         if (!isAuthenticated) {
+            // console.log("KIL");
             return <a href="/">Click to go to next page<Redirect to="/" /></a>;
+            // console.log("KIL1");
         } else {
+            // console.log("KIL2");
+            console.log("LL:"+this.state.isDetails);
+            // console.log("KIL3");
             return (
                 <>
                     <div className="page-header clear-filter" filter-color="blue" style={{
@@ -454,7 +473,7 @@ class ProfilePage extends Component {
                         <div className="content" style={{ marginTop: "0%", color: "white" }}>
                             <Container>
                                 <Col className="ml-auto mr-auto" md="12">
-                                    {/* <Card className="card-login card-plain">
+                                    <Card className="card-login card-plain">
                                         <Form action="" className="form" method="">
                                             <CardHeader className="text-center">
                                                 <div className="logo-container" style={{ width: "100%" }}>
@@ -465,21 +484,35 @@ class ProfilePage extends Component {
                                                     ></img>
                                                 </div>
                                             </CardHeader>
-                                            <CardBody> */}
+                                            <CardBody>
                                     <Row>
                                         <Col className="ml-auto mr-auto" md="10">
-                                            <h3>Your Registration ID is</h3>
-                                            <h3>{this.state.uid}</h3>
-                                                Please Share This ID in instagram account after completeing below Steps.
-
-                                                        <h4 className="title text-center">My Portfolio - {this.state.name}</h4>
+                                        
+                                        {
+                                        this.state.isDetails?
+                                        <div>
+                                        
+                                        <h2 className="title text-center">My Portfolio - {this.state.name}</h2>
+                                        <h3>Your Registration ID is</h3>
+                                        <h3>{this.state.uid}</h3>
+                                        </div>
+                                        :
+                                        <div>
+                                        
+                                        <h2 className="title text-center">My Portfolio - {this.state.name}</h2>
+                                        <div>
+                                            Please Share This ID in instagram account after completeing below Steps.
                                             <div className="nav-align-center">
                                                 <div className="sv">
                                                     {surveyRender}
                                                 </div>
-                                                {/* {onCompleteComponent} */}
-
                                             </div>
+                                            </div>
+                                            </div>
+                                        }
+                                            
+
+                                            
                                             <div className="col text-center">
                                                 <Button
                                                     className="btn-round"
@@ -489,15 +522,15 @@ class ProfilePage extends Component {
                                                     size="md"
                                                 >
                                                     Log Out
-                          </Button>
+                                                </Button>
                                             </div>
 
                                         </Col>
                                     </Row>
-                                    {/* </CardBody>
+                                    </CardBody>
 
 
-                                            <CardFooter className="text-center">
+                                            {/* <CardFooter className="text-center">
 
                                                 <div className="col text-center">
                                                     <Button
@@ -510,15 +543,16 @@ class ProfilePage extends Component {
                                                         Log Out
                                                     </Button>
                                                 </div>
-                                            </CardFooter>
+                                            </CardFooter> */}
                                         </Form>
-                                    </Card> */}
+                                    </Card>
                                 </Col>
                             </Container>
                         </div>
                     </div>
                 </>
             );
+            // console.log("KIL4");
         }
     }
 }

@@ -123,8 +123,9 @@ export const UpdateUser = (id,name, insta,email,notify)=>{
   if (name && insta && email ) {
   const time = new Date().getTime.toString();
   const season="Season2";
+  const isDetails=false;
   var dbRef = myFirebase.database().ref("/UserInfo/"+id);
-  dbRef.set({ name,insta,email,notify,time,season
+  dbRef.set({ name,insta,email,notify,time,season,isDetails
     // Name: {name}, 
     // InstaID:{insta},
     // Email:{email},
