@@ -712,6 +712,19 @@ welcome
   .welcome-area .header-text p {
     margin-bottom: 20px;
   }
+  .mobile-head{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top:5px;
+    font-size: 20px;
+
+  }
+  .mobile-head1{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top:5px;
+    font-size: 15px;
+  }
 }
 
 @media (max-width: 765px) {

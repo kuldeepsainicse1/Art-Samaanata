@@ -80,7 +80,7 @@ class ProfilePage extends Component {
         let sv = true;
         let json = {
             clearInvisibleValues: "onHidden",
-            title: "Art Samaanata Season 2 Registration Form",
+            // title: "Art Samaanata Season 2 Registration Form",
             pages: [
                 {
                     title: "Please enter your details for Cerificates",
@@ -495,13 +495,14 @@ class ProfilePage extends Component {
                                         <h2 className="title text-center">My Portfolio - {this.state.name}</h2>
                                         <h3>Your Registration ID is</h3>
                                         <h3>{this.state.uid}</h3>
+                                        <h5>Please Share Registration ID in instagram account.</h5>
                                         </div>
                                         :
                                         <div>
                                         
-                                        <h2 className="title text-center">My Portfolio - {this.state.name}</h2>
+                                        <h2 className="text-center mobile-head">My Portfolio - {this.state.name}</h2>
                                         <div>
-                                            Please Share This ID in instagram account after completeing below Steps.
+                                            <h4 className="mobile-head1">Please fill the details to generate your Registration ID.</h4>
                                             <div className="nav-align-center">
                                                 <div className="sv">
                                                     {surveyRender}

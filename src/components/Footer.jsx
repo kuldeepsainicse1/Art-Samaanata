@@ -1,4 +1,5 @@
 import React from "react";
+import {SiteVersion} from "./EnvironmentVars"
 
 
 const Footer = () => {
@@ -17,11 +18,10 @@ const Footer = () => {
         <div className="row">
             <div className="col-lg-12">
 
-                <p className="copyright">Copyright &copy; 2020 Art Samaanata<br/>
+                <p className="copyright" style={{marginTop:"0px",paddingBottom:"0px"}}>Copyright &copy; 2020 Art Samaanata<br/>
                 <img src="https://hitwebcounter.com/counter/counter.php?page=7658716&style=0038&nbdigits=3&type=ip&initCount=0" title="Total Website Hits Unique Visitors" alt="Web Hits"   border="0" ></img>
                 <img src="https://hitwebcounter.com/counter/counter.php?page=7657744&style=0038&nbdigits=4&type=page&initCount=100" title="Total Website Hits All Visitors" alt="Web Hits"   border="0"></img>
-                
-                
+                <br/>Ver:{SiteVersion}
                 </p>
                 
                 {/* <a style={{align:center}} href="https://www.hitwebcounter.com" target="_blank">
