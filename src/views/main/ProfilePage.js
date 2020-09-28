@@ -9,6 +9,7 @@ import ReactDOM from "react-dom";
 import * as Survey from "survey-react";
 import "./styles.css";
 import "survey-react/survey.css";
+import { Season } from "../../components/EnvironmentVars";
 
 // reactstrap components
 import {
@@ -44,7 +45,7 @@ import Footer from "components/Footer";
 
 
 class ProfilePage extends Component {
-    state = { name: "", uid: "",isDetails:"" };
+    state = { name: "", uid: "",isDetails:"",userDetails:"",insta:"",scount:"",REG_ID:"" };
 
 
     handleLogout = () => {
@@ -63,12 +64,43 @@ class ProfilePage extends Component {
         dbRef.on("value", snapshot => {
             const name = snapshot.val().name;
             const isDetails = snapshot.val().isDetails;
-            this.setState({ name });
+            const insta = snapshot.val().insta;
+            const REG_ID = snapshot.val().REG_ID!== undefined?snapshot.val().REG_ID:"NO Registration";
             this.setState({ isDetails });
-            console.log(":"+this.state.isDetails);
+            if(isDetails && REG_ID==="NO Registration")
+            {
+                alert("Click OK for Registration in Season 3.")
+                dbRef.update({ isDetails: false});
+                this.setState({ isDetails:false });
+
+            }
+            this.setState({ name });
+            this.setState({insta});
+            this.setState({ REG_ID });
+            // console.log(":"+this.state.isDetails);
         }, function (errorObject) {
             console.log("The read failed: " + errorObject.code);
         });
+        // const fsRef = firebaset.firestore();
+
+                    // const collection = fsRef.collection('Counters').doc(Season);
+
+                    // collection.get().then(snapshot => {
+                    //       const scount = snapshot.data().count;
+                    //       console.log("The read scount: " + Season+":"+scount);
+                    //       this.setState({scount});
+                    //       let count=parseInt(this.state.scount)+1;
+                    //       collection.set({count});
+                    //       console.log("The Updated scount: " + Season+":"+count);
+                    // });
+
+        // const collection = fsRef.collection('UserDetails_ArtSeason2').doc(uid);
+        // collection.get().then(
+
+        //     details => {
+        //         let userDetails = details.data().Certificate;
+        //         this.setState({ userDetails });
+        //     });
     }
 
     render() {
@@ -325,7 +357,18 @@ class ProfilePage extends Component {
                             name: "CompetitionType",
                             title: "Choose your Competition Type",
                             isRequired: true,
-                            choices: ["Free Registration", "Paid Registration"]
+                            choices: ["Free Registration ( Only for Kids below 13 Years )", "Paid Registration"]
+                        },
+                        {
+                            type: "dropdown",
+                            name: "isKid",
+                            visibleIf: "{CompetitionType}='Free Registration ( Only for Kids below 13 Years )'",
+                            title: "Did you message your Your School ID Card or Date of Birth Proof Screen Shots on insta page?",
+                            isRequired: true,
+                            choices: [
+                                "Yes",
+                                "No"
+                            ]
                         },
                         {
                             type: "html",
@@ -351,9 +394,9 @@ class ProfilePage extends Component {
                             title: "How much registration fees you have paid ?",
                             isRequired: true,
                             choices: [
-                                "20/* ( For 1 art)",
-                                "40/* ( For 2 art)",
-                                "50/* ( For 3 art)"
+                                "30/* ( For 1 art)",
+                                "60/* ( For 2 art)"
+                                
                             ]
                         }
 
@@ -395,6 +438,20 @@ class ProfilePage extends Component {
                     questions: [
                         {
                             type: "text",
+                            name: "UID",
+                            defaultValue :isUser.uid,
+                            readOnly :true,
+                            title: "Your User ID:"
+                        },
+                        {
+                            type: "text",
+                            name: "insta",
+                            defaultValue :this.state.insta,
+                            readOnly :true,
+                            title: "Your Instagram ID:"
+                        },
+                        {
+                            type: "text",
                             name: "know",
                             // isRequired: true,
                             title: "How did you get to know about Art Contest by Art Samaanata ?"
@@ -410,6 +467,8 @@ class ProfilePage extends Component {
 
             ]
         };
+        
+        // mapDefaults
 
         var surveyRender =  !this.state.isDetails?(
             <Survey.Survey
@@ -418,18 +477,40 @@ class ProfilePage extends Component {
                 showProgressBar='bottom'
 
                 onComplete={function (result) {
-                    console.log("Result JSON:\n" + JSON.stringify(result.data, null, 3));
+                    // console.log("Result JSON:\n" + JSON.stringify(result.data, null, 3));
                     const fsRef = firebaset.firestore();
-                    const res = fsRef.collection('UserDetails_ArtSeason2').doc(isUser.uid).set(result.data);
-                    alert("Thanks for successful submission\nPlease share details in Insta Page");
-                    var dbRef = firebaset.database().ref("/UserInfo/"+isUser.uid);
-                    dbRef.update({ isDetails: true})
-                    .then(function() {
-                        console.log('Synchronization succeeded at');
-                    })
-                    .catch(function(error) {
-                        console.log('Synchronization failed at');
+
+                    const collection = fsRef.collection('Counters').doc(Season);
+                    // console.log("Registration ID for" + Season);
+
+                    collection.get().then(snapshot => {
+                          let scount = snapshot.data().count;
+                        //   console.log("The read scount: " + Season+":"+scount);
+                        //   this.setState({scount});
+                          let count=parseInt(scount)+1;
+                          
+                          const REG_ID="SE_3_"+count;
+                        //   this.setState({REG_ID});
+                          console.log("Registration ID for " + Season+":"+REG_ID);
+                          const res = fsRef.collection('UserDetails_ArtSeason3').doc(REG_ID).set(result.data);
+                          collection.set({count});
+                          
+                          var dbRef = firebaset.database().ref("/UserInfo/"+isUser.uid);
+                          dbRef.update({ isDetails: true,REG_ID:REG_ID,season:Season})
+                          .then(function() {
+                              console.log('Synchronization succeeded');
+                              alert("Thanks for successful submission\nPlease share details in Insta Page");    
+                          })
+                          .catch(function(error) {
+                              console.log('Synchronization failed');
+                              alert("Contact to administrator");
+                          });
+
                     });
+                    
+                    // mapDefaults();
+
+                    
                 }}
 
             />
@@ -457,7 +538,7 @@ class ProfilePage extends Component {
             // console.log("KIL1");
         } else {
             // console.log("KIL2");
-            console.log("LL:"+this.state.isDetails);
+            // console.log("LL:"+this.state.userDetails);
             // console.log("KIL3");
             return (
                 <>
@@ -494,8 +575,18 @@ class ProfilePage extends Component {
                                         
                                         <h2 className="title text-center">My Portfolio - {this.state.name}</h2>
                                         <h3>Your Registration ID is</h3>
-                                        <h3>{this.state.uid}</h3>
-                                        <h5>Please Share Registration ID in instagram account.</h5>
+                                        <h3>{this.state.REG_ID}</h3>
+                                        
+                                        {
+                                            this.state.userDetails?
+                                            <div>
+                                                <h5>Thanks for your participation in Season 2</h5>
+                                            {/* <a href={this.state.userDetails} style={{color:"black"}} target="_blank">Click here to Download Your Certificate</a> */}
+                                            </div>
+                                            :
+                                            <h5>Please Share Registration ID in instagram account.</h5>
+                                        }
+                                        
                                         </div>
                                         :
                                         <div>

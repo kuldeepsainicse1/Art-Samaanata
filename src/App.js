@@ -32,13 +32,17 @@ import Index from "views/main/IndexPage1.js";
 import NucleoIcons from "views/NucleoIcons.js";
 import LoginPage from "views/main/LoginPage.js";
 import SignUpPage from "views/main/SignUpPage.js";
+// import SignUp from "views/main/Signup.js";
 import RulesPage from "views/main/RulesPage.js";
 import PrizesPage from "views/main/PrizesPage.js";
 
 import ProfilePage from "views/main/ProfilePage.js";
 import Admin from "views/admin/admin.js";
 import Cert from "views/Certificate/Cert";
+import Certify from "views/Certificate/Certify";  
 import SurveyComponent from "views/Survey/Survey.js";
+import Verify from "views/admin/Verify";
+import VerifyDetails from "views/admin/VerifyDetails";
 
 // ReactDOM.render(
 
@@ -50,6 +54,7 @@ import SurveyComponent from "views/Survey/Survey.js";
       
 
         <Route exact path="/index" render={props => <Index {...props} />} />
+        
         {/* <Route
           path="/nucleo-icons"
           render={props => <NucleoIcons {...props} />}
@@ -87,9 +92,37 @@ import SurveyComponent from "views/Survey/Survey.js";
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
       /> 
+
+      {/* <ProtectedRoute
+        exact
+        path="/certify"
+        component={Certify}
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+      />  */}
+      {/* <ProtectedRoute
+        exact
+        path="/verify"
+        component={Verify}
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+      />  */}
+      {/* <ProtectedRoute
+        exact
+        path="/VerifyDetails"
+        render={props => <VerifyDetails {...props} />} 
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+      />  */}
+      <Route path="/VerifyDetails"
+               render={props => <VerifyDetails {...props} />} 
+        />
+       
+
+
         {/* <Route
-          path="/profile"
-          render={props => <ProfilePage {...props} />}
+          path="/verify"
+          render={props => <Verify {...props} />}
         /> */}
         <Route path="/login"
                render={props => <LoginPage {...props} />} 
@@ -108,6 +141,9 @@ import SurveyComponent from "views/Survey/Survey.js";
         <Route path="/register"
                render={props => <SignUpPage {...props} />} 
         />
+         {/* <Route path="/foryou"
+               render={props => <SignUp {...props} />} 
+        /> */}
 
 
 {/* <Route path="/test"

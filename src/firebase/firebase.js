@@ -7,16 +7,18 @@ import "firebase/database";
 // require('firebase/auth');
 // require('firebase/database');
 
-// var firebaseConf = {
-//   apiKey: "AIzaSyC9OnPznM4MOdRiRCR1fU08pA0gJokDvi4",
-//   authDomain: "artsamaanata.firebaseapp.com",
-//   databaseURL: "https://artsamaanata.firebaseio.com",
-//   projectId: "artsamaanata",
-//   storageBucket: "artsamaanata.appspot.com",
-//   messagingSenderId: "646180968014",
-//   appId: "1:646180968014:web:e422bf5070ea40bbab951f",
-//   measurementId: "G-5CRN4SH3BE"
+
+// const firebaseConf = {
+//   apiKey: "AIzaSyDcbDFnu1yA_yBaHqkq76lonl4rtrld6h8",
+//   authDomain: "mystic-react.firebaseapp.com",
+//   databaseURL: "https://mystic-react.firebaseio.com",
+//   projectId: "mystic-react",
+//   storageBucket: "mystic-react.appspot.com",
+//   messagingSenderId: "48483195767",
+//   appId: "1:48483195767:web:c4860716d88a59244f1f72",
+//   measurementId: "G-B3N1589CDN"
 // };
+
 const firebaseConf = {
   apiKey: "AIzaSyAF9mTeX0VB22sJEET_YI4bN_4LX_1cp0U",
   authDomain: "art-samaanata.firebaseapp.com",

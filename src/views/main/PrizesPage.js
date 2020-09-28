@@ -1,5 +1,6 @@
 import React from "react";
 import { firebaset } from "../../actions/";
+import {Season} from "../../components/EnvironmentVars"
 // reactstrap components
 import {
     Card,
@@ -56,38 +57,41 @@ function PrizesPage() {
                     <img src="assets/images/logo.png" alt="Art Samaanata" />
                 </a></CardHeader>
                 <CardBody>
-                    <CardTitle tag="h3">Season 2 Prizes</CardTitle>
+                    <CardTitle tag="h3">{Season} Prizes</CardTitle>
                     <br />
                     <br />
                     <CardText>
                         <Row>
                             <Col>
-                                <h6>Free Registration</h6>
+                                <h6>Pen and Pencil Artwork </h6>
                                 <ul className="list">
-                                    <li className="active"><b>No Registration Fees</b></li>
-                                    <li className="active"><b>4 Winners will be declared</b></li>
+                                    {/* <li className="active"><b>No Registration Fees</b></li> */}
+                                    <li className="active"><b>3 Winners will be declared</b></li>
                                     <li className="active"><b>Prizes 🏆🎖️🏅</b></li>
                                     <ol>
-                                        <li className="active"><b>1. First Prize : 5 days ShoutOut + Story</b></li>
-                                        <li className="active"><b>2. Creative Art Work Prize : 4 days ShoutOut + Story</b></li>
-                                        <li className="active"><b>3. Beginner's Art Work Prize : 3 days ShoutOut + Story</b></li>
-                                        <li className="active"><b>4. Most Liked Art Work Prize : 2 days ShoutOut + Story</b></li>
-                                        <li className="active"><b>E-certificate of Appreciation for all winners</b></li>
+                                        <li className="active"><b>1. First Prize : ₹300</b></li>
+                                        <li className="active"><b>2. Second Prize : ₹200</b></li>
+                                        <li className="active"><b>3. Third Prize : ₹100</b></li>
+                                        <li className="active"><b>Appriciation E-Certificate for the Winners</b></li>
+                                        <li className="active">Artwork Accepted in this Categories</li>
+                                        <li className="active"> Drawing / Mandala / Sketching / Calligraphy</li>
+
                                     </ol>
                                 </ul>
                             </Col>
                             <Col>
-                                <h6>Paid Registration</h6>
+                                <h6>Painting and Other Artwork</h6>
                                 <ul className="list">
-                                    <li className="active"><b>Registration Fees : ₹20 per art Work</b></li>
-                                    <li className="active"><b>4 Winners will be declared</b></li>
+                                    {/* <li className="active"><b>Registration Fees : ₹20 per art Work</b></li> */}
+                                    <li className="active"><b>3 Winners will be declared</b></li>
                                     <li className="active"><b>Prizes 🏆🎖️🏅</b></li>
                                     <ol>
-                                        <li className="active"><b>1. First Prize : ₹ 35% of overall collection</b></li>
-                                        <li className="active"><b>2. Second Prize : ₹ 25% of overall collection</b></li>
-                                        <li className="active"><b>3. Third Prize : ₹ 15% of overall collection</b></li>
-                                        <li className="active"><b>4. Most Liked Art Work Prize : ₹ 10% of overall collection</b></li>
-                                        <li className="active"><b>E-certificate of Appreciation for all winners</b></li>
+                                        <li className="active"><b>1. First Prize : ₹300</b></li>
+                                        <li className="active"><b>2. Second Prize : ₹200</b></li>
+                                        <li className="active"><b>3. Third Prize : ₹100</b></li>
+                                        <li className="active"><b>Appriciation E-Certificate for the Winners</b></li>
+                                        <li className="active">Artwork Accepted in this Categories</li>
+                                        <li className="active">Painting / Digital Art / Craft Work / Color Art and all other</li>
                                     </ol>
                                   
                                 </ul>
@@ -96,6 +100,11 @@ function PrizesPage() {
                         <Row>
                             <Col>
                             <ul className="list">
+                                        <h6>Consolation Prizes depends on number of entries</h6>
+                                        {/* <li className="active"><b>1. Creative Art Work Prize : ₹100</b></li>
+                                        <li className="active"><b>2. Beginner's Art Work Prize : ₹100</b></li>
+                                        <li className="active"><b>3. Most Liked Art Work Prize : ₹100</b></li> */}
+                                        
                         <li className="active">Any kind of art is acceptable : painting, sketching, mandala, doodling, mehndi or anything handmade art except photography</li>
                                     <li className="active">Top 5 Art work will be on the wall of Art Samaanata forever.</li>
                                     <li className="active"><b>All participants will get E Certificate from Art Samaanata Initiative</b></li>
@@ -107,8 +116,8 @@ function PrizesPage() {
                     </CardText>
                     <Button
                         color="primary"
-                        href="#pablo"
-                        onClick={event => window.location.href = "/register"}
+                        href="/register"
+                        // onClick={event => window.location.href = "/register"}
                     >
                         Go for Registration
           </Button>

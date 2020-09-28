@@ -11,6 +11,30 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'DancingScript';
+  src: url('../fonts/DancingScript-Medium.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+.DancingScript
+{
+  font-family: 'DancingScript';
+  color:black;
+}
+
+@font-face {
+  font-family: 'Sacramento';
+  src: url('../fonts/Sacramento-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+.Sacramento
+{
+  font-family: 'Sacramento';
+  color:black;
+}
 .fa {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;

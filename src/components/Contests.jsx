@@ -80,7 +80,7 @@ const Contests = () => {
                     </div>
                 </div>
                 <div className="col-lg-4 col-md-6 col-sm-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.4s">
-                    <div className="pricing-item active">
+                    <div className="pricing-item ">
                         <div className="pricing-header">
                             <h2>Season 2</h2>
                         </div>
@@ -109,16 +109,16 @@ const Contests = () => {
                                 <li>24/7 Security</li>
                             </ul>  */}
                         </div>
-                        <div className="pricing-footer active">
-                        <a href="/rules" >Read the Rules for more details</a><br/>
+                        <div className="pricing-footer">
+                        
                         <br/>
-                            <a href="/register" className="main-button">Register</a>
+                            <a href="#" className="main-button disabled" >Contest Finished</a>
                             
                         </div>
                     </div>
                 </div>
                 <div className="col-lg-4 col-md-6 col-sm-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.4s">
-                    <div className="pricing-item ">
+                    <div className="pricing-item active">
                         <div className="pricing-header">
                             <h2>Season 3</h2>
                         </div>
@@ -126,8 +126,8 @@ const Contests = () => {
                             <div className="price-wrapper">
                                 
                                 <span className="period">Registration Charges</span>
-                                <span className="currency">₹</span>
-                                <span className="price">--</span>
+                                <span className="currency">₹ </span>
+                                <span className="price">30</span>
                             </div>
                             {/* <ul className="list">
                                 <li className="active">120 GB space</li>
@@ -139,7 +139,9 @@ const Contests = () => {
                             </ul> */}
                         </div>
                         <div className="pricing-footer">
-                            <a href="#" aria-disabled className="main-button">Coming Soon</a>
+                        <a href="/rules" >Read the Rules for more details</a><br/>
+                        <br/>
+                            <a href="/rules" aria-disabled className="main-button active">Register Now</a>
                         </div>
                     </div>
                 </div>

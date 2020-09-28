@@ -1,5 +1,6 @@
 import React from "react";
 import { firebaset  } from "../../actions/";
+import {Season} from "../../components/EnvironmentVars"
 // reactstrap components
 import {
   Card,
@@ -54,20 +55,22 @@ function RulesPage() {
           <img src="assets/images/logo.png" alt="Art Samaanata" />
         </a></CardHeader>
         <CardBody>
-          <CardTitle tag="h4">Season 2 Rules and Guidelines</CardTitle>
+          <CardTitle tag="h4">{Season} Rules and Guidelines</CardTitle>
           <CardText>
             
             <ul className="list">
-              <li><h3>Important Points To remember Before Registration</h3></li>
-              <li className="active"><b>Registrations Starts on 3rd September 2020 by 00:01 AM</b></li>
-              <li className="active"><b>Registrations Ends on 20 September 2020 by 23:59 PM</b></li>
-              <li className="active"><b>Result Declaration Date : 23 September 2020</b> on Facebook, Instagram and this site.</li>
+              <li><p tag="h3">Important Points To remember Before Registration</p></li>
+              <li className="active"><b>Registrations Starts on 28th September 2020</b></li>
+              <li className="active"><b>Registrations Ends on 18 October 2020</b></li>
+              <li className="active"><b>Result Declaration Date : 22 October 2020</b> on Facebook, Instagram and this site.</li>
               <li className="active">Its a no theme or no topic contest.  You can upload any art work form in any medium.</li>
-              <li className="active">You can participate with minimum 1 art and maximum 3 art, fees mentioned below.</li>
+              <li className="active">You can participate with minimum 1 art and maximum 2 art Registration Fees ₹30 per ArtWork.</li>
+              <li className="active"><b>No Registration Fees for Participants having age less than 13.</b></li>
+              <br/>
               <li className="active"><h5>There are 2 Registration Categories</h5></li>
               <ol className="list">
-                <li className="active"><h6>Free Registration</h6></li>
-                <li className="active"><h6>Paid Registration</h6></li>
+                <li className="active"><h6>Pen and Pencil Artwork Registration</h6></li>
+                <li className="active"><h6>Painting and Other Artwork Registration</h6></li>
               </ol>
 
               <li className="active"><a href="/prizes" alt="Prize details">CLICK HERE</a> to see Prizes for both Categories</li>
@@ -79,8 +82,8 @@ function RulesPage() {
           </CardText>
           <Button
             color="primary"
-            href="#pablo"
-            onClick={event => window.location.href = "/register"}
+            href="/register"
+            // onClick={event => window.location.href = "/register"}
           >
             Go for Registration
           </Button>

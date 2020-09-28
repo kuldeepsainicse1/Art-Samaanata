@@ -1,5 +1,6 @@
 import firebase from "firebase/app";
 import { myFirebase } from "../firebase/firebase";
+import { Season } from "../components/EnvironmentVars";
 
 export const LOGIN_REQUEST = "LOGIN_REQUEST";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
@@ -122,8 +123,8 @@ export const UpdateUser = (id,name, insta,email,notify)=>{
 
   if (name && insta && email ) {
   const time = new Date().getTime.toString();
-  const season="Season2";
   const isDetails=false;
+  const season=Season;
   var dbRef = myFirebase.database().ref("/UserInfo/"+id);
   dbRef.set({ name,insta,email,notify,time,season,isDetails
     // Name: {name}, 
@@ -133,10 +134,10 @@ export const UpdateUser = (id,name, insta,email,notify)=>{
     // Time:{time}
   })
   .then(function() {
-    console.log('Synchronization succeeded at'+time);
+    console.log('Synchronization succeeded');
   })
   .catch(function(error) {
-    console.log('Synchronization failed at'+time);
+    console.log('Synchronization failed');
   });
   } 
   
@@ -151,7 +152,7 @@ export const signupUser = (name, insta,email, password,notify) => dispatch => {
     .then(user => {
       id=myFirebase.auth().currentUser.uid
       UpdateUser(id,name,insta,email,notify);
-      console.log("signupUser Successful"+name+":"+insta+":"+email+":"+notify);
+      console.log("Signup User Successful");//+name+":"+insta+":"+email+":"+notify);
       dispatch(receiveSignup(user));
     })
     .catch(error => {

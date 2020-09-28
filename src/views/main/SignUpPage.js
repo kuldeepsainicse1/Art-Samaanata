@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { signupUser } from "../../actions/";
-
+import {Season} from "../../components/EnvironmentVars"
 
 // reactstrap components
 import {
@@ -28,7 +28,7 @@ import { withWidth } from "@material-ui/core";
 
 class  SignUpPage extends Component {
   state = {name:"" , insta:"" ,email: "", password: "",notify:"off",emailValid:false,passValid:false,nameValid:false,instaValid:false,
-  error:""
+  error:"",isSubmit:false
 };
     // toggle = () => setOpen(!this.state.open);
   // const [open, setOpen] = useState(false);
@@ -60,6 +60,8 @@ class  SignUpPage extends Component {
   };
 
   handleSubmitsignup = () => {
+    // this.button.disabled = true;
+    this.setState({isSubmit:true});
     const { dispatch } = this.props;
     const { name, insta, email, password,notify } = this.state;
     // console.log(name+ insta+ email+ password+notify);
@@ -70,9 +72,15 @@ class  SignUpPage extends Component {
     if(!this.state.passValid) this.state.errormsg="Password Length must be greater than 5.\n"+this.state.errormsg;
     // console.log(this.state.errormsg);
     if(this.state.errormsg.length>0)
-      alert(this.state.errormsg)
+    {
+      alert(this.state.errormsg);
+      this.setState({isSubmit:false});
+    }
     else
+    {
       dispatch(signupUser(name,insta,email, password,notify));
+      // alert('Registration closed for {Season}');
+    }
     this.state.errormsg=""
   };
   
@@ -113,7 +121,7 @@ class  SignUpPage extends Component {
                   <CardTitle className="title-up" tag="h2">
                     Sign Up
                   </CardTitle>
-                  <p>Season 2</p>
+                  <p>{Season}</p>
                   {/* <div className="social-line">
                     <Button
                       className="btn-neutral btn-icon btn-round"
@@ -276,6 +284,7 @@ class  SignUpPage extends Component {
                   <Button
                     className="btn-neutral btn-round"
                     color="info"
+                    disabled={this.state.isSubmit}
                     href="#pablo"
                     onClick={this.handleSubmitsignup}
                     size="lg"

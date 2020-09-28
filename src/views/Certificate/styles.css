@@ -37,6 +37,8 @@
   }
 .cert-head{
     height: 350px;
+    font-family: "Verdana";
+
     /* width: 100%; */
     /* background-color: gray; */
 }  
@@ -52,12 +54,12 @@
   margin-top: -30px;
   margin-left:40px;
   font-style: initial;
-  font-family:"Lucida Grande";
+  font-family:"Optima";
   font-size: 40px;
   color: rgb(56, 56, 197);
 }
 .cert-body{
-  font-family:"sans-serif";
+  font-family:"Bungee Inline";
 }  
 
 .cert-body-text1{
@@ -68,13 +70,16 @@
   font-size: 22px;
   color: rgb(18, 18, 20);
 }
-.cert-body-text2{
-  margin-top: 0px;
-  margin-left:15px;
+.cert-body-name{
+  margin-top: 30px;
+  margin-left:110px;
+  height:100px;
+  width:650px;
   font-style: initial;
-  font-family:cursive;
-  font-size: 50px;
+  font-family:"Brush Script MT";
+  font-size: 60px;
   color: rgb(0, 0, 61);
+  /* background-color: gray; */
 }
 .cert-body-text3{
   margin-top: 0px;
@@ -84,16 +89,21 @@
   font-size: 18px;
   color: rgb(50, 50, 50);
 }
-.cert-footer{
-  /* height: 200px; */
-  /* width: 100%; */
-  margin-top: 100px;
-  /* background-color: rgb(192, 53, 53); */
+.cert-body-user{
+  margin-top: 232px;
+  margin-left:750px;
+  height:20px;
+  width:200px;
+  font-style: initial;
+  /* font-family:""; */
+  font-size: 15px;
+  color: rgb(79, 79, 85);
+  /* background-color: gray; */
 }  
 
 .image-cropper {
-   margin: 33px 0 0 -5px;
-  max-width: 150px;
+   margin: 40px 0 0 830px;
+  max-width: 160px;
   height: auto;
   border-radius: 50%;
   position: relative;

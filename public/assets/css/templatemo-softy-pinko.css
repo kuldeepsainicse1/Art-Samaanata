@@ -43,6 +43,12 @@ figure, header, nav, section, article, aside, footer, figcaption {
   outline: 0;
 }
 
+/* @font-face {
+  font-family: myFont;
+  src: url("\assets\fonts\");
+  font-weight: bold;
+} */
+
 .clearfix:after {
   content: ".";
   display: block;
@@ -394,7 +400,7 @@ header
 }
 
 .header-area .main-nav .logo {
-  float: left;
+  /* float: left; */
   margin-top: 37px;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
@@ -679,6 +685,13 @@ welcome
 }
 
 @media (max-width: 991px) {
+
+  .header-area .main-nav .logo{
+    float: center;
+    text-align: center;
+  /* margin-top: 37px; */
+
+  }
   .welcome-area .header-text {
     top: 65% !important;
     transform: perspective(1px) translateY(-60%) !important;
@@ -700,6 +713,12 @@ welcome
 }
 
 @media (max-width: 820px) {
+  .header-area .main-nav .logo{
+    float: center;
+    text-align: center;
+  /* margin-top: 37px; */
+
+  }
   .welcome-area .header-text {
     top: 65% !important;
     transform: perspective(1px) translateY(-60%) !important;
@@ -728,6 +747,12 @@ welcome
 }
 
 @media (max-width: 765px) {
+  .header-area .main-nav .logo{
+    float: center;
+    text-align: center;
+  /* margin-top: 37px; */
+
+  }
   .welcome-area {
     margin-bottom: 10px;
   }
