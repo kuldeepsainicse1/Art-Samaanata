@@ -66,41 +66,28 @@ function PrizesPage() {
                                 <h6>Pen and Pencil Artwork </h6>
                                 <ul className="list">
                                     {/* <li className="active"><b>No Registration Fees</b></li> */}
-                                    <li className="active"><b>3 Winners will be declared</b></li>
+                                    <li className="active"><b>6 Winners will be declared</b></li>
                                     <li className="active"><b>Prizes 🏆🎖️🏅</b></li>
                                     <ol>
-                                        <li className="active"><b>1. First Prize : ₹300</b></li>
-                                        <li className="active"><b>2. Second Prize : ₹200</b></li>
-                                        <li className="active"><b>3. Third Prize : ₹100</b></li>
+                                        <li className="active"><b>1. First Position Artwork</b></li>
+                                        <li className="active"><b>2. Second Position Artwork</b></li>
+                                        <li className="active"><b>3. Third Position Artwork</b></li>
+                                        <li className="active"><b>4. Creative Art Work </b></li>
+                                        <li className="active"><b>5. Beginner's Art Work </b></li>
+                                        <li className="active"><b>6. Most Liked Art Work </b></li>
                                         <li className="active"><b>Appriciation E-Certificate for the Winners</b></li>
                                         <li className="active">Artwork Accepted in this Categories</li>
-                                        <li className="active"> Drawing / Mandala / Sketching / Calligraphy</li>
+                                        {/* <li className="active"> Drawing / Mandala / Sketching / Calligraphy</li> */}
 
                                     </ol>
                                 </ul>
                             </Col>
-                            <Col>
-                                <h6>Painting and Other Artwork</h6>
-                                <ul className="list">
-                                    {/* <li className="active"><b>Registration Fees : ₹20 per art Work</b></li> */}
-                                    <li className="active"><b>3 Winners will be declared</b></li>
-                                    <li className="active"><b>Prizes 🏆🎖️🏅</b></li>
-                                    <ol>
-                                        <li className="active"><b>1. First Prize : ₹300</b></li>
-                                        <li className="active"><b>2. Second Prize : ₹200</b></li>
-                                        <li className="active"><b>3. Third Prize : ₹100</b></li>
-                                        <li className="active"><b>Appriciation E-Certificate for the Winners</b></li>
-                                        <li className="active">Artwork Accepted in this Categories</li>
-                                        <li className="active">Painting / Digital Art / Craft Work / Color Art and all other</li>
-                                    </ol>
-                                  
-                                </ul>
-                            </Col>
+                            
                         </Row>
                         <Row>
                             <Col>
                             <ul className="list">
-                                        <h6>Consolation Prizes depends on number of entries</h6>
+                                        {/* <h6>Consolation Prizes depends on number of entries</h6> */}
                                         {/* <li className="active"><b>1. Creative Art Work Prize : ₹100</b></li>
                                         <li className="active"><b>2. Beginner's Art Work Prize : ₹100</b></li>
                                         <li className="active"><b>3. Most Liked Art Work Prize : ₹100</b></li> */}

@@ -9,7 +9,7 @@ import ReactDOM from "react-dom";
 import * as Survey from "survey-react";
 import "./styles.css";
 import "survey-react/survey.css";
-import { Season } from "../../components/EnvironmentVars";
+import { Season,SEASON_REG_ID,SEASON_DB,SEASON_COUNTER } from "../../components/EnvironmentVars";
 
 // reactstrap components
 import {
@@ -63,13 +63,14 @@ class ProfilePage extends Component {
         // console.log("["+dbRef);
         dbRef.on("value", snapshot => {
             const name = snapshot.val().name;
+            const season = snapshot.val().season;
             const isDetails = snapshot.val().isDetails;
             const insta = snapshot.val().insta;
             const REG_ID = snapshot.val().REG_ID!== undefined?snapshot.val().REG_ID:"NO Registration";
             this.setState({ isDetails });
-            if(isDetails && REG_ID==="NO Registration")
+            if(isDetails && REG_ID==="NO Registration" || season!==Season )
             {
-                alert("Click OK for Registration in Season 3.")
+                alert("Click OK for Registration in "+Season+".")
                 dbRef.update({ isDetails: false});
                 this.setState({ isDetails:false });
 
@@ -353,51 +354,22 @@ class ProfilePage extends Component {
                     title: "Share your Competition details",
                     questions: [
                         {
+                            type: "dropdown",
+                            name: "ArtType",
+                            title: "Type of your Art Work?",
+                            isRequired: true,
+                            choices: [
+                                "Pen and Pencil Artwork",
+                                "Painting and Other Artwork"
+                                
+                            ]
+                        },
+                        {
                             type: "radiogroup",
                             name: "CompetitionType",
                             title: "Choose your Competition Type",
                             isRequired: true,
-                            choices: ["Free Registration ( Only for Kids below 13 Years )", "Paid Registration"]
-                        },
-                        {
-                            type: "dropdown",
-                            name: "isKid",
-                            visibleIf: "{CompetitionType}='Free Registration ( Only for Kids below 13 Years )'",
-                            title: "Did you message your Your School ID Card or Date of Birth Proof Screen Shots on insta page?",
-                            isRequired: true,
-                            choices: [
-                                "Yes",
-                                "No"
-                            ]
-                        },
-                        {
-                            type: "html",
-                            name: "payinfo",
-                            visibleIf: "{CompetitionType}='Paid Registration'",
-                            html: "<table><body><row><td><b>PhonePay/Paytm</b>-9953668337</td><td style='padding:20px'><b>Google Pay</b>-mysteriousltd@oksbi</td></row></body></table>"
-                        },
-                        {
-                            type: "dropdown",
-                            name: "fees",
-                            visibleIf: "{CompetitionType}='Paid Registration'",
-                            title: "Have you paid registration fees?",
-                            isRequired: true,
-                            choices: [
-                                "Yes",
-                                "No"
-                            ]
-                        },
-                        {
-                            type: "dropdown",
-                            name: "nfees",
-                            visibleIf: "{fees}='Yes'",
-                            title: "How much registration fees you have paid ?",
-                            isRequired: true,
-                            choices: [
-                                "30/* ( For 1 art)",
-                                "60/* ( For 2 art)"
-                                
-                            ]
+                            choices: ["Free Registration - World's Teacher Day"]
                         }
 
 
@@ -407,17 +379,7 @@ class ProfilePage extends Component {
 
                     title: "Share your Screen shots regarding Art Samaanata?",
                     questions: [
-                        {
-                            type: "radiogroup",
-                            title: "Did you message your Payment Screen Shots on insta page?",
-                            name: "payss",
-                            visibleIf: "{fees}='Yes'",
-                            isRequired: true,
-                            choices: [
-                                "Yes",
-                                "No"
-                            ]
-                        },
+                        
                         {
                             type: "radiogroup",
                             title: "Did you message your Art Work Screen Shots on insta page?",
@@ -480,7 +442,7 @@ class ProfilePage extends Component {
                     // console.log("Result JSON:\n" + JSON.stringify(result.data, null, 3));
                     const fsRef = firebaset.firestore();
 
-                    const collection = fsRef.collection('Counters').doc(Season);
+                    const collection = fsRef.collection('Counters').doc(SEASON_COUNTER);
                     // console.log("Registration ID for" + Season);
 
                     collection.get().then(snapshot => {
@@ -489,10 +451,10 @@ class ProfilePage extends Component {
                         //   this.setState({scount});
                           let count=parseInt(scount)+1;
                           
-                          const REG_ID="SE_3_"+count;
+                          const REG_ID=SEASON_REG_ID+count;
                         //   this.setState({REG_ID});
                           console.log("Registration ID for " + Season+":"+REG_ID);
-                          const res = fsRef.collection('UserDetails_ArtSeason3').doc(REG_ID).set(result.data);
+                          const res = fsRef.collection(SEASON_DB).doc(REG_ID).set(result.data);
                           collection.set({count});
                           
                           var dbRef = firebaset.database().ref("/UserInfo/"+isUser.uid);

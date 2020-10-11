@@ -60,12 +60,12 @@ function RulesPage() {
             
             <ul className="list">
               <li><p tag="h3">Important Points To remember Before Registration</p></li>
-              <li className="active"><b>Registrations Starts on 28th September 2020</b></li>
-              <li className="active"><b>Registrations Ends on 18 October 2020</b></li>
-              <li className="active"><b>Result Declaration Date : 22 October 2020</b> on Facebook, Instagram and this site.</li>
-              <li className="active">Its a no theme or no topic contest.  You can upload any art work form in any medium.</li>
-              <li className="active">You can participate with minimum 1 art and maximum 2 art Registration Fees ₹30 per ArtWork.</li>
-              <li className="active"><b>No Registration Fees for Participants having age less than 13.</b></li>
+              <li className="active"><b>Registrations Starts on 5th October 2020</b></li>
+              <li className="active"><b>Registrations Ends on 6 October 2020</b></li>
+              <li className="active"><b>Result Declaration Date : 7 October 2020</b> on Facebook, Instagram and this site.</li>
+              <li className="active">Its a theme contest <b>World's Teacher Day</b>.  You can upload any art work form in any medium.</li>
+              <li className="active">You can participate with minimum 1 art and maximum 2 art </li>
+              <li className="active"><b>No Registration Fees for all Participants</b></li>
               <br/>
               <li className="active"><h5>There are 2 Registration Categories</h5></li>
               <ol className="list">

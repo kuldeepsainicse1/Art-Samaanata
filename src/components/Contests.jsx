@@ -1,5 +1,5 @@
 import React from "react";
-
+import {Season} from "../components/EnvironmentVars";
 
 const Contests = () => {
   return (
@@ -121,13 +121,14 @@ const Contests = () => {
                     <div className="pricing-item active">
                         <div className="pricing-header">
                             <h2>Season 3</h2>
+                            <h2>World's Teacher Day</h2>
                         </div>
                         <div className="pricing-body">
                             <div className="price-wrapper">
                                 
                                 <span className="period">Registration Charges</span>
                                 <span className="currency">₹ </span>
-                                <span className="price">30</span>
+                                <span className="price">0</span>
                             </div>
                             {/* <ul className="list">
                                 <li className="active">120 GB space</li>

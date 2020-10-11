@@ -651,6 +651,7 @@ welcome
   align-items: center;
   justify-content: center;
   background-image: url(../images/banner-bg.png);
+  /* background-image: url(../images/WTD.jpg); */
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover; 
