@@ -1,0 +1,32 @@
+
+@media (max-width: 765px) {
+
+    .terms-Row{
+        margin-top: 25%;  
+    }
+    .terms-menu{
+        display: none; 
+    }
+    .logo{
+        margin:0px;
+    }
+    
+}
+
+.logo img{
+    margin-top:15px;
+}
+
+.terms li { display:inline; margin-left:10px; }
+
+.terms-content p {color:black}
+
+.faq-content{
+    font-size: large;
+
+}
+.terms-menu {
+    margin-left: 35px;
+    font-size: large;
+}
+

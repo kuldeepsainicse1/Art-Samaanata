@@ -44,6 +44,17 @@ import SurveyComponent from "views/Survey/Survey.js";
 import Verify from "views/admin/Verify";
 import VerifyDetails from "views/admin/VerifyDetails";
 
+
+import AboutPage from "views/main/AboutPage.js";
+import FAQsPage from "views/main/FAQsPage.js";
+import PrivacyPolicyPage from "views/main/PrivacyPolicyPage.js";
+import TermsConditionsPage from "views/main/TermsConditionsPage.js";
+import RefundPage from "views/main/RefundPage.js";
+
+
+
+
+
 // ReactDOM.render(
 
   function App(props) {
@@ -63,10 +74,10 @@ import VerifyDetails from "views/admin/VerifyDetails";
           path="/admin"
           render={props => <Admin {...props} />}
         /> */}
-        {/* <Route
+        <Route
           path="/cert"
           render={props => <Cert {...props} />}
-        /> */}
+        />
 
         {/* <Route
           path="/survey"
@@ -144,6 +155,25 @@ import VerifyDetails from "views/admin/VerifyDetails";
          {/* <Route path="/foryou"
                render={props => <SignUp {...props} />} 
         /> */}
+
+
+        <Route path="/about"
+               render={props => <AboutPage {...props} />} 
+        />
+        <Route path="/FAQs"
+               render={props => <FAQsPage {...props} />} 
+        />
+        <Route path="/privacy"
+               render={props => <PrivacyPolicyPage {...props} />} 
+        />
+        <Route path="/terms"
+               render={props => <TermsConditionsPage {...props} />} 
+        />
+        <Route path="/refund"
+               render={props => <RefundPage {...props} />} 
+        />
+        
+
 
 
 {/* <Route path="/test"

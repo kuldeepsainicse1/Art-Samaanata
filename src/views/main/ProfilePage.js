@@ -9,7 +9,7 @@ import ReactDOM from "react-dom";
 import * as Survey from "survey-react";
 import "./styles.css";
 import "survey-react/survey.css";
-import { Season,SEASON_REG_ID,SEASON_DB,SEASON_COUNTER } from "../../components/EnvironmentVars";
+import { Season,SEASON_REG_ID,SEASON_DB,SEASON_COUNTER,SEASON_NAME } from "../../components/EnvironmentVars";
 
 // reactstrap components
 import {
@@ -68,9 +68,9 @@ class ProfilePage extends Component {
             const insta = snapshot.val().insta;
             const REG_ID = snapshot.val().REG_ID!== undefined?snapshot.val().REG_ID:"NO Registration";
             this.setState({ isDetails });
-            if(isDetails && REG_ID==="NO Registration" || season!==Season )
+            if(isDetails && REG_ID==="NO Registration" || season!==SEASON_NAME )
             {
-                alert("Click OK for Registration in "+Season+".")
+                alert("Click OK for Registration in "+SEASON_NAME+".")
                 dbRef.update({ isDetails: false});
                 this.setState({ isDetails:false });
 
@@ -365,12 +365,45 @@ class ProfilePage extends Component {
                             ]
                         },
                         {
-                            type: "radiogroup",
-                            name: "CompetitionType",
+                            type: "dropdown",
                             title: "Choose your Competition Type",
+                            name: "CompetitionType",
                             isRequired: true,
-                            choices: ["Free Registration - World's Teacher Day"]
+                            choices: [
+                                "Paid Registration - Season3"                            
+                            ]
+                        },
+                        {
+                            type: "html",
+                            name: "payinfo",
+                            visibleIf: "{CompetitionType}='Paid Registration - Season3'",
+                            html: "<table><body><row><td><b>PhonePay/Paytm/Google Pay</b>-9953668337</td><td style='padding:20px'><b>Google Pay / UPI</b>-mysteriousltd@oksbi</td></row></body></table>"
+                        },
+                        {
+                            type: "dropdown",
+                            name: "fees",
+                            visibleIf: "{CompetitionType}='Paid Registration - Season3'",
+                            title: "Have you paid registration fees?",
+                            isRequired: true,
+                            choices: [
+                                "Yes",
+                                "No"
+                            ]
                         }
+                        ,
+                        {
+                            type: "dropdown",
+                            name: "nfees",
+                            visibleIf: "{fees}='Yes'",
+                            title: "How much registration fees you have paid ?",
+                            isRequired: true,
+                            choices: [
+                                "21/* ( For 1 art)",
+                                "42/* ( For 2 art)",
+                                "63/* ( For 3 art)"
+                            ]
+                        }
+                        
 
 
                     ]
@@ -384,6 +417,17 @@ class ProfilePage extends Component {
                             type: "radiogroup",
                             title: "Did you message your Art Work Screen Shots on insta page?",
                             name: "artss",
+
+                            isRequired: true,
+                            choices: [
+                                "Yes",
+                                "No"
+                            ]
+                        },
+                        {
+                            type: "radiogroup",
+                            title: "Did you message your Payment Screen Shots on insta page?",
+                            name: "payss",
 
                             isRequired: true,
                             choices: [
@@ -458,7 +502,7 @@ class ProfilePage extends Component {
                           collection.set({count});
                           
                           var dbRef = firebaset.database().ref("/UserInfo/"+isUser.uid);
-                          dbRef.update({ isDetails: true,REG_ID:REG_ID,season:Season})
+                          dbRef.update({ isDetails: true,REG_ID:REG_ID,season:SEASON_NAME})
                           .then(function() {
                               console.log('Synchronization succeeded');
                               alert("Thanks for successful submission\nPlease share details in Insta Page");    

@@ -120,7 +120,6 @@ const Contests = () => {
                 <div className="col-lg-4 col-md-6 col-sm-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.4s">
                     <div className="pricing-item active">
                         <div className="pricing-header">
-                            <h2>Season 3</h2>
                             <h2>World's Teacher Day</h2>
                         </div>
                         <div className="pricing-body">

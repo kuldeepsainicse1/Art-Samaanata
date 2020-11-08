@@ -1,9 +1,8 @@
 import React from "react";
 
 
-const Header = () => {
+const About = () => {
   return (
-    <header className="header-area header-sticky">
     <div className="container">
         <div className="row">
             <div className="col-12">
@@ -33,8 +32,7 @@ const Header = () => {
             </div>
         </div>
     </div>
-</header>
   );
 };
 
-export default Header;
+export default About;

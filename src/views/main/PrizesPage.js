@@ -66,15 +66,12 @@ function PrizesPage() {
                                 <h6>Pen and Pencil Artwork </h6>
                                 <ul className="list">
                                     {/* <li className="active"><b>No Registration Fees</b></li> */}
-                                    <li className="active"><b>6 Winners will be declared</b></li>
+                                    <li className="active"><b>3 Winners will be declared for both Categories</b></li>
                                     <li className="active"><b>Prizes 🏆🎖️🏅</b></li>
                                     <ol>
                                         <li className="active"><b>1. First Position Artwork</b></li>
                                         <li className="active"><b>2. Second Position Artwork</b></li>
                                         <li className="active"><b>3. Third Position Artwork</b></li>
-                                        <li className="active"><b>4. Creative Art Work </b></li>
-                                        <li className="active"><b>5. Beginner's Art Work </b></li>
-                                        <li className="active"><b>6. Most Liked Art Work </b></li>
                                         <li className="active"><b>Appriciation E-Certificate for the Winners</b></li>
                                         <li className="active">Artwork Accepted in this Categories</li>
                                         {/* <li className="active"> Drawing / Mandala / Sketching / Calligraphy</li> */}
@@ -87,10 +84,10 @@ function PrizesPage() {
                         <Row>
                             <Col>
                             <ul className="list">
-                                        {/* <h6>Consolation Prizes depends on number of entries</h6> */}
-                                        {/* <li className="active"><b>1. Creative Art Work Prize : ₹100</b></li>
-                                        <li className="active"><b>2. Beginner's Art Work Prize : ₹100</b></li>
-                                        <li className="active"><b>3. Most Liked Art Work Prize : ₹100</b></li> */}
+                                        <h6>Consolation Prizes depends on number of entries</h6>
+                                        <li className="active"><b>1. Creative Art Work </b></li>
+                                        <li className="active"><b>2. Beginner's Art Work </b></li>
+                                        <li className="active"><b>3. Most Liked Art Work </b></li>
                                         
                         <li className="active">Any kind of art is acceptable : painting, sketching, mandala, doodling, mehndi or anything handmade art except photography</li>
                                     <li className="active">Top 5 Art work will be on the wall of Art Samaanata forever.</li>

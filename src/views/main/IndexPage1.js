@@ -33,7 +33,7 @@ import ContactUs from "components/ContactUs";
 import Header from "components/Header";
 import Welcome from "components/Welcome";
 import Contests from "components/Contests"
-import Footer from "components/Footer"
+import Footer from "components/Footer" 
 
 
 // const Counter = () => {

@@ -14,10 +14,24 @@ const Footer = () => {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
     <div className="container">
         <div className="row">
-            <div className="col-lg-12 col-md-12 col-sm-12">
+            <div className="col-lg-6 col-md-6 col-sm-12">
                 <ul className="social">
                     <li><a href="https://www.instagram.com/_art.samaanata_/" target="_blank"><i className="fa fa-instagram"></i></a></li>
                     <li><a href="https://www.facebook.com/artsamaanata/" target="_blank"><i className="fa fa-facebook"></i></a></li>
+                    <li><a href="https://twitter.com/artsamaanata" target="_blank"><i className="fa fa-twitter"></i></a></li>
+                </ul>
+            </div>
+            <div className="col-lg-6 col-md-6 col-sm-12">
+                <ul className="text-center terms">
+                    <li><a href="/terms">Terms of Service</a> </li>
+                    <li><a href="/privacy">Privacy Policy</a> </li>
+                    <li><a href="/refund">Refund/Cancellation</a> </li>                  
+                    <li><a href="/FAQs">FAQs</a> </li>
+                </ul>      
+                <ul className="text-center terms">
+                    
+                    <li><a href="/about">About Us</a></li>
+                    
                 </ul>
             </div>
         </div>
